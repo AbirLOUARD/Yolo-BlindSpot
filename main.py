@@ -43,7 +43,7 @@ def main():
         net.setInput(blob)
         output_layers_names = net.getUnconnectedOutLayersNames()
         layerOutputs = net.forward(output_layers_names)
-
+        
         boxes = []
         confidences = []
         class_ids = []
@@ -78,7 +78,6 @@ def main():
                     cv2.putText(img, label + " " + confidence, (x, y+20), font, 1, (255,255,255), 2)
 
         cv2.imshow('YOLO Capture', img)
-
         key = cv2.waitKey(1)
         if (key == 27):
             break
